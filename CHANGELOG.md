@@ -1,0 +1,22 @@
+# FIELDS:
+  * firstName
+  * middleName
+  * lastName
+  * email
+  * phoneNumber
+  * tiktok
+  * instagram
+  * twitter
+  * facebook
+  * github
+  * linkedin
+  * brandName
+  * brand
+  * company
+  * jobTitle
+  * title
+  * job
+  * website
+  * country
+  * state
+  * city
