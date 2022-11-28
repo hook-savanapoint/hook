@@ -1,8 +1,9 @@
 declare namespace Express {
     interface Request {
-        creator: 
+        user: 
         | {
-            uid: string
+            uid: string,
+            premium_token: string
            }
 
         | Document<any, any, any>;

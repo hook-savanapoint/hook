@@ -14,7 +14,7 @@ app.use('/api', router)
 
 
 
-const port = process.env.PORT || 2812;
+const port = process.env.PORT || 2828;
 
 connectionDB()
 app.listen(port, () => {

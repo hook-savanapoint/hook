@@ -15,3 +15,4 @@ export const connectionDB = async() => {
         console.log('DB is Down: ', error)
      }
 }
+

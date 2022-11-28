@@ -8,9 +8,7 @@ import 'firebase/compat/firestore'
 import { serviceAccount } from './service'
 
 admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount),
-  databaseURL: process.env.DATABASEURL
-  
+  credential: admin.credential.cert(serviceAccount)
 });
 
 

@@ -1,22 +1,15 @@
 import { Router } from 'express';
 import { AuthGuard } from '../guards/Auth.guard';
-import { hashKey } from '../guards/HashKey';
-import {  collection, createCollection, deleteCollection, index } from '../services/collections.service';
-import { deleteKey, generatorKeys, getKeys, updateKey } from '../services/keys.service';
+import { generatePremiumToken, desativatePremiumToken} from '../services/generatePremiumToken.service';
+import { upgradeAccount  } from '../services/premium.service';
+import { verifyToken } from '../services/verifiyToken.service';
 
 
 export const router = Router();
 
-router.get('/collections',index)
-router.post('/collections', AuthGuard, createCollection, hashKey, generatorKeys);
-router.get('/collections/:collection', AuthGuard, collection);
-router.delete('/collections/:_id', deleteCollection);
 
-router.post('/savanapoint-hok/generate-key', AuthGuard, hashKey, generatorKeys)
+router.post('/upgrade-account', AuthGuard, upgradeAccount, generatePremiumToken)
 
+router.post('/desactivate-account', AuthGuard, desativatePremiumToken)
 
-router.get('/savanapoint-hok/:flag', AuthGuard, getKeys)
-
-router.put('/savanapoint-hok/update-key/:_id', AuthGuard, hashKey, updateKey)
-
-router.delete('/savanapoint-hok/delete-key/:_id', AuthGuard, hashKey, deleteKey)
+router.post('/token-account', AuthGuard, verifyToken)
